@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Space Explorer - Interactive JS Adventure</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="stars"></div>
+    <div class="twinkling"></div>
+    
+    <header>
+        <div class="header-content">
+            <h1><i class="fas fa-rocket rocket-icon"></i> Space Explorer</h1>
+            <p>An interactive JavaScript adventure through the cosmos!</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- Navigation -->
+        <nav class="tab-navigation">
+            <button class="tab-btn active" data-tab="event-handling">
+                <i class="fas fa-hand-pointer"></i> Controls
+            </button>
+            <button class="tab-btn" data-tab="interactive-elements">
+                <i class="fas fa-gamepad"></i> Exploration
+            </button>
+            <button class="tab-btn" data-tab="form-validation">
+                <i class="fas fa-user-astronaut"></i> Registration
+            </button>
+        </nav>
+        
+        <!-- 1. EVENT HANDLING SECTION -->
+        <section id="event-handling" class="tab-content active">
+            <div class="section-header">
+                <h2>Spacecraft Controls <i class="fas fa-satellite"></i></h2>
+                <p>Master the controls of your spacecraft with these interactive elements!</p>
+            </div>
+            
+            <!-- Button Click -->
+            <div class="card">
+                <h3><i class="fas fa-power-off"></i> Launch Button</h3>
+                <button id="click-btn" class="cosmic-btn">Initiate Launch Sequence</button>
+                <p id="click-output" class="output-message">Press the launch button to begin your journey!</p>
+            </div>
+            
+            <!-- Hover Effects -->
+            <div class="card">
+                <h3><i class="fas fa-meteor"></i> Asteroid Field</h3>
+                <div id="hover-box" class="hover-asteroid">
+                    <i class="fas fa-meteor"></i>
+                    <span>Navigate through me!</span>
+                </div>
+                <p id="hover-output" class="output-message">Ship status: Safe distance</p>
+            </div>
+            
+            <!-- Keypress Detection -->
+            <div class="card">
+                <h3><i class="fas fa-keyboard"></i> Communication Console</h3>
+                <div class="console-container">
+                    <input type="text" id="key-input" placeholder="Type a message to mission control...">
+                    <div class="console-lights">
+                        <div class="light red"></div>
+                        <div class="light yellow"></div>
+                        <div class="light green"></div>
+                    </div>
+                </div>
+                <p id="key-output" class="output-message">Awaiting transmission...</p>
+            </div>
+            
+            <!-- Secret Action (Double-click) -->
+            <div class="card">
+                <h3><i class="fas fa-unlock-alt"></i> Secret Compartment</h3>
+                <div id="secret-box" class="secret-panel">
+                    <i class="fas fa-question"></i>
+                    <span>Double-click to unlock...</span>
+                </div>
+                <p id="secret-output" class="output-message">This compartment seems to hide something...</p>
+            </div>
+        </section>
+
+        <!-- 2. INTERACTIVE ELEMENTS SECTION -->
+        <section id="interactive-elements" class="tab-content">
+            <div class="section-header">
+                <h2>Space Exploration <i class="fas fa-planet-ringed"></i></h2>
+                <p>Discover the wonders of the universe with these interactive features!</p>
+            </div>
+            
+            <!-- Color Changing Button -->
+            <div class="card">
+                <h3><i class="fas fa-palette"></i> Nebula Viewer</h3>
+                <div class="nebula-container">
+                    <button id="color-btn" class="cosmic-btn">View Next Nebula</button>
+                    <div class="nebula-glow"></div>
+                </div>
+            </div>
+            
+            <!-- Image Gallery -->
+            <div class="card">
+                <h3><i class="fas fa-camera"></i> Planetary Gallery</h3>
+                <div class="gallery">
+                    <div class="gallery-display">
+                        <img id="gallery-img" src="https://via.placeholder.com/400x200?text=Planet+1" alt="Planet Image">
+                        <p id="image-counter">Planet 1 of 4</p>
+                    </div>
+                    <div class="gallery-controls">
+                        <button id="prev-btn" class="cosmic-btn"><i class="fas fa-chevron-left"></i></button>
+                        <button id="next-btn" class="cosmic-btn"><i class="fas fa-chevron-right"></i></button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Accordion -->
+            <div class="card">
+                <h3><i class="fas fa-book-open"></i> Space Encyclopedia</h3>
+                <div class="accordion">
+                    <div class="accordion-item">
+                        <button class="accordion-header">
+                            <i class="fas fa-star icon-left"></i>
+                            Stars
+                            <i class="fas fa-chevron-down icon-right"></i>
+                        </button>
+                        <div class="accordion-content">
+                            <p>Stars are luminous spheres of plasma held together by gravity. Our nearest star is the Sun, providing energy that sustains life on Earth. Stars come in different colors indicating their temperature - from cool red stars to hot blue ones.</p>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <button class="accordion-header">
+                            <i class="fas fa-globe icon-left"></i>
+                            Planets
+                            <i class="fas fa-chevron-down icon-right"></i>
+                        </button>
+                        <div class="accordion-content">
+                            <p>Planets are celestial bodies that orbit stars and have cleared their neighboring region of planetesimals. Our solar system has eight planets: Mercury, Venus, Earth, Mars, Jupiter, Saturn, Uranus, and Neptune.</p>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <button class="accordion-header">
+                            <i class="fas fa-meteor icon-left"></i>
+                            Asteroids
+                            <i class="fas fa-chevron-down icon-right"></i>
+                        </button>
+                        <div class="accordion-content">
+                            <p>Asteroids are rocky remnants left over from the early formation of our solar system. Most are found in the asteroid belt between Mars and Jupiter, though some venture closer to Earth as near-Earth objects.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. FORM VALIDATION SECTION -->
+        <section id="form-validation" class="tab-content">
+            <div class="section-header">
+                <h2>Space Program Registration <i class="fas fa-clipboard-check"></i></h2>
+                <p>Join our space program by completing this application form!</p>
+            </div>
+            
+            <div class="card">
+                <form id="validation-form" class="space-form">
+                    <div class="form-group">
+                        <label for="name"><i class="fas fa-user"></i> Astronaut Name</label>
+                        <input type="text" id="name" name="name" placeholder="Enter your space explorer name" required>
+                        <span class="validation-message" id="name-validation"></span>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email"><i class="fas fa-envelope"></i> Space Communication Channel</label>
+                        <input type="email" id="email" name="email" placeholder="your.email@cosmos.com" required>
+                        <span class="validation-message" id="email-validation"></span>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="password"><i class="fas fa-lock"></i> Security Clearance Code</label>
+                        <div class="password-container">
+                            <input type="password" id="password" name="password" placeholder="Minimum 8 characters required" required>
+                            <button type="button" id="toggle-password" class="toggle-password">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                        <span class="validation-message" id="password-validation"></span>
+                    </div>
+                    
+                    <div class="form-group">
+                        <button type="submit" id="submit-btn" class="cosmic-btn submit-btn">
+                            <i class="fas fa-paper-plane"></i> Launch Application
+                        </button>
+                        <div id="form-success" class="success-message hidden">
+                            <i class="fas fa-check-circle"></i> Application submitted successfully! Prepare for takeoff!
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p><i class="fas fa-code"></i> JavaScript Event Handling & Interactive Elements Assignment</p>
+            <p><i class="fas fa-rocket"></i> Space Explorer Theme v1.0</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
